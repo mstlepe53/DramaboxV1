@@ -88,7 +88,7 @@ export default function Layout() {
     if (!debouncedQuery.trim()) { setSuggestions([]); return; }
     let cancelled = false;
     setSuggestionsLoading(true);
-    search(debouncedQuery)
+    searchMulti(debouncedQuery)
       .then(data => {
         if (!cancelled) { setSuggestions(data.slice(0, 6)); setSuggestionsLoading(false); }
       })
